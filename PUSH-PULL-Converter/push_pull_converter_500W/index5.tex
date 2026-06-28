@@ -1,0 +1,85 @@
+\newpage
+\subsubsection*{Comparison of Forward and Push-Pull Converters (310V → 24V/500W)}
+
+\small
+\setlength{\tabcolsep}{4pt} % Reduce column spacing
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} 
+                            >{\raggedright\arraybackslash}X 
+                            >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Parameter}               & \textbf{Forward Converter}       & \textbf{Push-Pull Converter}       \\ 
+\midrule
+
+\textbf{Topology}                & Single-switch with reset winding 
+                                & Two switches in complementary operation (center-tapped XFMR) \\ 
+\addlinespace[0.5em]
+
+\rowcolor{gray!10} % Highlighted row
+\textbf{Switch Voltage Stress}   & 
+    \( 310\ \text{V} \) \newline 
+    (full input voltage) & 
+    \( 310\ \text{V} \) \newline 
+    (full input voltage) \\ 
+\addlinespace[0.5em]
+
+\textbf{Transformer}             & Requires reset winding           & Center-tapped primary              \\ 
+\addlinespace[0.5em]
+
+\textbf{Efficiency}              & 85–90\%                          & 90–94\%                            \\ 
+\addlinespace[0.5em]
+
+\textbf{Turns Ratio (\(N_p:N_s\))} & 
+    \(  7.15:1 \) & 
+    \( 3.72:1 \) \newline 
+    (per winding) \\ 
+\addlinespace[0.5em]
+
+\textbf{Component Cost}          & Low                              & Moderate (center-tapped XFMR)      \\ 
+\addlinespace[0.5em]
+
+\textbf{Best Suited For}         & Low-power, cost-sensitive apps   & High efficiency, medium-power (≤500W) \\ 
+\addlinespace[0.5em]
+
+\textbf{Pros}                    & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Simple control (single PWM)
+            
+- Low component count
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- High efficiency (90–94\%)
+            
+- Balanced transformer operation
+        
+    \end{minipage} \\ 
+\addlinespace[0.5em]
+
+\textbf{Cons}                    & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Reset losses at 500W
+            
+- Limited to ≤500W
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Risk of transformer saturation
+            
+- Bulky center-tapped XFMR
+        
+    \end{minipage} \\ 
+
+\bottomrule
+\end{tabularx}
