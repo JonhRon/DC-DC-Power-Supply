@@ -1,0 +1,39 @@
+\section{Overview Of Power Electronic}
+\subsection{Introduction to Haft-Bridge Converter} 
+The half-bridge converter is a DC-DC topology ideal for medium-power applications, offering galvanic isolation and efficient energy transfer. It uses two switches (MOSFETs/IGBTs) and capacitors to split the input voltage, driving a transformer's primary winding with alternating $\pm \frac{V_\text{in}}{2}$ pulses. The transformer scales voltage via its turns ratio, while rectification and filtering on the secondary side produce a regulated DC output. Key benefits include reduced voltage stress on switches (each blocking $\frac{V_\text{in}}{2}$), high efficiency, and simpler design compared to full-bridge converters. Challenges involve capacitor voltage balancing and transformer saturation risks. Widely applied in telecom systems, EV chargers, and renewable energy, it balances performance, cost, and reliability in compact power solutions.
+\subsubsection*{Key Features of the Push-Pull Converter}
+\begin{itemize}
+    \item \textbf{Topology }: 
+    \begin{itemize}
+        \item Uses two switches (MOSFETs/IGBTs) in a half-bridge configuration.
+        \item Input voltage split by two capacitors (\(C_1\) and \(C_2\)), each charged to \(V_{\text{in}}/2\)
+    \end{itemize}
+    \item \textbf{Voltage Handling }:
+    \begin{itemize}
+        \item Each switch blocks only \(V_{\text{in}}/2\), reducing voltage stress.
+        \item Capacitors stabilize midpoint voltage and prevent transformer DC bias.
+    \end{itemize}
+    \item \textbf{Isolation \& Scaling }:
+    \begin{itemize}
+        \item High-frequency transformer provides galvanic isolation.
+        \item Voltage transformation via turns ratio (step-up/step-down).
+    \end{itemize}
+    \item \textbf{Efficiency }:
+    \begin{itemize}
+        \item High efficiency due to full-on/full-off switching.
+        \item Supports soft-switching techniques (e.g., ZVS) to reduce losses.
+    \end{itemize}
+    \item \textbf{Control}: 
+    \begin{itemize}
+        \item Regulated via PWM with adjustable duty cycle.
+        \item Requires dead-time management to prevent shoot-through
+    \end{itemize}
+\end{itemize}
+\subsection{Purpose of the Report}
+% \noindent % To make sure the text starts immediately after the multicolumn environment ends
+\noindent The purpose of this report is to provide a comprehensive analysis of Haft-Bridge converters, focusing on their working principle, key design considerations, and practical applications. By exploring these aspects, the report aims to highlight the technical nuances that make Haft-Bridge converters indispensable in modern electronics while addressing challenges such as leakage inductance, switching losses, and electromagnetic interference (EMI).
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.7\linewidth]{Pictures/Images/1.pdf}
+%     \caption{\textcolor{blue}{\textit{\footnotesize Forward dc-dc converter}}}
+% \end{figure}

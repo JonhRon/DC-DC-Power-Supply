@@ -1,0 +1,131 @@
+\documentclass[a4paper,12pt]{article}
+% Required packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{xcolor,graphicx}
+\usepackage{fancyhdr} % For header and footer customization
+\usepackage{geometry} % To customize page margins
+\usepackage{hyperref} % For clickable links
+\usepackage{lipsum} % For dummy text generation (optional)
+\usepackage{titlesec} % For customizing section and TOC style
+\usepackage{helvet}
+\usepackage{tcolorbox}
+\usepackage{tocloft}
+\usepackage{multicol} % For multi-column support
+\usepackage{caption} % For adding captions to images and tables
+\hypersetup{hidelinks} % Disables colored/boxed links
+\usepackage{siunitx} % For proper unit formatting
+\usepackage{siunitx}
+\usepackage{booktabs} % For professional tables
+\usepackage{listings} % For code formatting
+\usepackage{booktabs}       % For professional-looking tables
+\usepackage{tabularx}
+% Define color
+\definecolor{blue}{RGB}{31,56,100}
+
+% Set the page margins
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2cm}
+\definecolor{blue}{rgb}{0.2, 0.4, 0.6}
+
+% Set the caption color to light deep blue
+% Header and Footer settings
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{National Polytechnic Institute of Cambodia}
+%\fancyhead[C]{Chapter \thechapter}
+\fancyhead[R]{Faculty of Electronic}
+\fancyfoot[L]{Power Electronic 2}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Haft-Bridge Converter}
+\renewcommand{\headrulewidth}{3pt} % Thin line under the header
+\renewcommand{\footrulewidth}{3pt} % Thin line above the footer
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% Document begins here
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \begin{center}
+        \begin{minipage}{5cm}
+            \begin{flushleft}
+                \includegraphics[scale=0.8,width=3cm]{Pictures/unnamed1.png}
+            \end{flushleft}
+        \end{minipage}\hfill
+        \begin{minipage}{10cm}
+            \begin{center}
+                \textbf{NATIONAL POLYTECHNIC INSTITUTE OF CAMBODIA }\\[0.5cm]
+                \textbf{FACULTY OF ELECTRONIC}\\[0.5cm]
+                \textbf{DEPARTMENT OF ELECTRONIC}
+            \end{center}
+        \end{minipage}\hfill
+        \textsc{\Large }\\[1.5cm]
+        {\Huge \bfseries Assignment}\\[2cm]
+        {\Huge \bfseries Power Electronic 2}
+        \textsc{\Large }\\[2.5cm]
+        % Title
+        \rule{\linewidth}{0.3mm} \\[0.4cm]
+        { \huge \bfseries\color{blue} Haft Bridge Converter Design 500W \\[0.4cm] }
+        \rule{\linewidth}{0.3mm} \\[3cm]
+        \begin{flushleft}
+            {\large \bfseries Professor's Name : }
+            \hspace{6cm}
+            {\large \bfseries Meas Saran }\\[1cm]
+            {\large \bfseries Student Name : }
+            \hspace{6.6cm}
+            {\large \bfseries Phon Phearon }\\[0.5cm]
+        \end{flushleft}
+        % Year
+        \vspace{1cm}
+        \begin{center}
+            {\large \bfseries 2024 - 2025 }
+        \end{center}
+    \end{center}
+\end{titlepage}
+
+% Set Roman page numbering for front matter (cover page and TOC)
+\pagenumbering{Roman}
+
+% Table of Contents
+%\newpage
+\tableofcontents
+% List of Figure
+%\newpage
+\listoffigures
+% list of Table
+%\newpage
+\listoftables     % Generates the list of tables
+% Start Doc
+\newpage
+% Set Arabic page numbering for the content section
+\pagenumbering{arabic}
+\input{index1}
+\input{index2}
+\newpage
+%\input{index3}
+\input{index4}
+\input{index5}
+\end{document}

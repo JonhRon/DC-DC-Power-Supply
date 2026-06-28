@@ -1,0 +1,106 @@
+
+\subsubsection*{Comparison of Forward, Push-Pull, and Half-Bridge Converters (310V → 24V/500W)}
+\small
+\setlength{\tabcolsep}{4pt} % Reduce column spacing
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{5cm} 
+                            >{\raggedright\arraybackslash}X 
+                            >{\raggedright\arraybackslash}X 
+                            >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Parameter}               & \textbf{Forward Converter}       & \textbf{Push-Pull Converter}     & \textbf{Half-Bridge Converter}   \\ 
+\midrule
+
+\textbf{Topology}                & Single-switch with reset winding/active clamp 
+                                & Two switches in complementary operation (center-tapped transformer) 
+                                & Two switches with capacitor-split input (\(V_{in}/2 = 155\ \text{V}\)) \\ 
+\addlinespace[0.5em]
+
+\textbf{Switch Voltage Stress}   & 
+    Switch: \(310\ \text{V}\) \newline 
+    Rectifier: \(24 + V_{\text{reset}}\) & 
+    Switches: \(310\ \text{V}\) \newline 
+    Rectifier: \(\frac{24 \cdot N_p}{N_s} + V_f\) & 
+    Switches: \(155\ \text{V}\) \newline 
+    Rectifier: \(\frac{24 \cdot N_p}{N_s} + V_f\) \\ 
+\addlinespace[0.5em]
+
+\textbf{Transformer Design}      & Requires reset winding           & Center-tapped primary           & Standard (no center tap)         \\ 
+\addlinespace[0.5em]
+
+%\rowcolor{gray!10} % Highlighted row
+\textbf{Efficiency}              & 85–90\%                          & 90–94\%                          & 90–93\%                          \\ 
+\addlinespace[0.5em]
+
+\textbf{Turns Ratio (\(N_p:N_s\))} & 
+    \( 3.72:1 \) & 
+    \(  7.15:1 \) & 
+    \(  3.72:1 \) \\ 
+\addlinespace[0.5em]
+
+\textbf{Component Cost}          & Low                              & Moderate                         & Moderate                         \\ 
+\addlinespace[0.5em]
+
+\textbf{Best Suited For}         & Low-power, cost-sensitive apps   & High efficiency, medium power   & High-input voltage, compact     \\ 
+\addlinespace[0.5em]
+
+\textbf{Pros}                    & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Simple control (single PWM)
+            
+- Low component count
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- High efficiency (90–94\%)
+            
+- Symmetrical operation
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Lower switch stress (155 V)
+            
+- No transformer saturation risk
+        
+    \end{minipage} \\ 
+\addlinespace[0.5em]
+
+\textbf{Cons}                    & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Reset losses at 500W
+            
+- Unsuitable for high power
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Risk of transformer saturation
+            
+- Bulky center-tapped XFMR
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Requires capacitor balancing
+            
+- Complex high-frequency control
+        
+    \end{minipage} \\ 
+
+\bottomrule
+\end{tabularx}
