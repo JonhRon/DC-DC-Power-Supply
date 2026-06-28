@@ -1,0 +1,83 @@
+\subsubsection*{Comparison of Push-Pull and Full-Bridge Converters (310V → 24V/1000W)}
+
+\small
+\setlength{\tabcolsep}{4pt} % Reduce column spacing
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm} 
+                            >{\raggedright\arraybackslash}X 
+                            >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Parameter}               & \textbf{Push-Pull Converter}       & \textbf{Full-Bridge Converter}     \\ 
+\midrule
+
+\textbf{Topology}                & Two switches in complementary operation (center-tapped transformer) 
+                                & Four switches in H-bridge configuration (capacitor-split input) \\ 
+\addlinespace[0.5em]
+
+%\rowcolor{gray!10} % Highlighted row
+\textbf{Switch Voltage Stress}   & 
+    \( 310\ \text{V} \) \newline 
+    (full input voltage) & 
+    \( 155\ \text{V} \) \newline 
+    (half input voltage via capacitor split) \\ 
+\addlinespace[0.5em]
+
+\textbf{Transformer}             & Center-tapped primary              & Standard (no center tap)           \\ 
+\addlinespace[0.5em]
+
+\textbf{Efficiency}              & 90–94\%                            & 92–95\%                            \\ 
+\addlinespace[0.5em]
+
+\textbf{Turns Ratio (\(N_p:N_s\))} & 
+    \( 7.15:1 \) & 
+    \( 7.15:1 \) \\ 
+\addlinespace[0.5em]
+
+\textbf{Component Cost}          & Moderate (center-tapped XFMR)      & High (4 switches, complex control) \\ 
+\addlinespace[0.5em]
+
+\textbf{Best Suited For}         & Medium power (≤500W)               & High power (≥1000W)                \\ 
+\addlinespace[0.5em]
+
+\textbf{Pros}                    & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- High efficiency (90–94\%)
+            
+- Balanced transformer operation
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Lower switch stress (155 V)
+            
+- Scalable for kW power
+        
+    \end{minipage} \\ 
+\addlinespace[0.5em]
+
+\textbf{Cons}                    & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Saturation risk at 1000W
+            
+- Bulky center-tapped XFMR
+        
+    \end{minipage} & 
+    \begin{minipage}[t]{\linewidth}
+        \vspace{-\baselineskip}
+        
+            
+- Complex control (phase-shift modulation)
+            
+- Higher component cost
+        
+    \end{minipage} \\ 
+
+\bottomrule
+\end{tabularx}

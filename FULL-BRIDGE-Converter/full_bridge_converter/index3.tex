@@ -1,0 +1,123 @@
+\section{ Mathematical Modeling}
+The forward converter is a DC-DC converter that provides \textbf{isolated voltage conversion} using a transformer. Its operation can be mathematically modeled by analyzing the energy transfer during the \textbf{switch-on} and \textbf{switch-off phases} of the main switch (MOSFET). The key components involved in the modeling are:
+
+\begin{itemize}
+    \item \textbf{Transformer}: Provides isolation and steps down the input voltage.
+    \item \textbf{Output Inductor ($ L_f $)}: Smooths the output current.
+    \item \textbf{Output Capacitor ($ C_{out} $)}: Filters the output voltage.
+    \item \textbf{Duty Cycle ($ D $)}: Determines the fraction of time the MOSFET is on.
+\end{itemize}
+\subsection{Derivation of the Voltage Conversion Equation}
+The forward converter's output voltage is determined by the duty cycle, transformer turns ratio, and input voltage. Here’s the step-by-step derivation:
+
+\begin{enumerate}
+    \item \textbf{Energy Transfer During Switch-On Phase}:
+    \[
+    V_{secondary} = V_{in} \cdot \frac{N_s}{N_p}
+    \]
+    
+    \item \textbf{Output Voltage Relationship}:
+    \[
+    V_{out} = V_{secondary} \cdot D
+    \]
+    
+    \item \textbf{Substitute $ V_{secondary} $}:
+    \[
+    V_{out} = V_{in} \cdot \frac{N_s}{N_p} \cdot D
+    \]
+    
+    \item \textbf{Final Voltage Conversion Equation}:
+    \[
+    \boxed{V_{out} = V_{in} \cdot \frac{N_s}{N_p} \cdot D}
+    \]
+\end{enumerate}
+
+Where:
+\begin{itemize}
+    \item $ V_{in} $: Input voltage.
+    \item $ V_{out} $: Output voltage.
+    \item $ N_p $: Number of turns in the primary winding.
+    \item $ N_s $: Number of turns in the secondary winding.
+    \item $ D $: Duty cycle ($ D < 0.5 $ for forward converters).
+\end{itemize}
+\subsection{Power Stage Calculation}
+The \textbf{power stage calculations} of a forward converter involve determining the values of key components such as the transformer turns ratio, output inductor, and output capacitor. These calculations ensure efficient and stable operation while meeting design specifications.
+
+\subsubsection*{1. Transformer Turns Ratio ($ N_p : N_s $)}
+
+The transformer turns ratio determines how much the input voltage is stepped down to match the desired output voltage.
+
+\textbf{Formula}:
+$$
+\frac{N_p}{N_s} = \frac{V_{in}}{V_{out} / D}
+$$
+
+\textbf{Steps}:
+\begin{itemize}
+    \item Determine the input voltage range ($ V_{in} $).
+    \item Specify the desired output voltage ($ V_{out} $).
+    \item Choose the duty cycle ($ D $).
+    \item Calculate the turns ratio using the formula.
+\end{itemize}
+
+\subsubsection*{2. Output Inductor ($ L_f $)}
+
+The output inductor ensures continuous current flow to the load and reduces ripple current.
+
+\textbf{Formula}:
+$$
+L_f = \frac{V_{out} \cdot (1 - D)}{f_{sw} \cdot \Delta I_L}
+$$
+
+\textbf{Steps}:
+\begin{itemize}
+   \item Use the desired output voltage ($ V_{out} $).
+    \item Use the chosen duty cycle ($ D $).
+    \item Specify the switching frequency ($ f_{sw} $).
+    \item Set the ripple current ($ \Delta I_L $) as 20–30\% of the output current ($ I_{out} $).
+    \item Calculate the inductance using the formula.
+\end{itemize}
+
+\subsubsection*{3. Output Capacitor ($ C_{out} $)}
+
+The output capacitor filters the output voltage and reduces ripple.
+
+\textbf{Formula}:
+$$
+C_{out} = \frac{I_{out} \cdot D}{f_{sw} \cdot \Delta V_{out}}
+$$
+
+\textbf{Steps}:
+\begin{itemize}
+     \item Use the maximum expected load current ($ I_{out} $).
+    \item Use the chosen duty cycle ($ D $).
+    \item Specify the switching frequency ($ f_{sw} $).
+    \item Set the output voltage ripple ($ \Delta V_{out} $) as 1–2\% of the output voltage.
+    \item Calculate the capacitance using the formula.
+\end{itemize}
+
+\subsubsection*{4. Reset Mechanism}
+
+The reset mechanism ensures that the transformer core resets during the switch-off phase to prevent saturation.
+
+\textbf{Reset Winding Turns Ratio}:
+$$
+N_{reset} = N_p
+$$
+\subsection{Modes of Operation}
+The \textbf{Forward Converter} can operate in two distinct modes based on the behavior of the output inductor current: \textbf{Continuous Conduction Mode (CCM)} and \textbf{Discontinuous Conduction Mode (DCM)}. These modes describe how the inductor current behaves during a switching cycle and have significant implications for efficiency, ripple, and design complexity.
+\subsection*{Continuous Conduction Mode (CCM)}
+In \textbf{CCM}, the current through the output inductor ($ L_f $) never drops to zero during a switching cycle. This mode is characterized by smooth and continuous energy transfer to the load, making it ideal for medium- to high-power applications.
+\newpage
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Pictures/Images/4.pdf}
+    \caption{\textcolor{blue}{\textit{\footnotesize Waveforms in the PWM forward converter for CCM}}}
+\end{figure}
+\subsection*{Discontinuous Conduction Mode (DCM)}
+In \textbf{DCM}, the current through the output inductor ($ L_f $) drops to zero during part of the switching cycle. This mode occurs when the inductor current cannot sustain continuous flow due to insufficient energy storage or light load conditions.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Pictures/Images/5.pdf}
+    \caption{\textcolor{blue}{\textit{\footnotesize Waveforms in the PWM forward converter for DCM}}}
+\end{figure}

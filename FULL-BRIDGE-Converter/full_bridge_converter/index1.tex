@@ -1,0 +1,46 @@
+\section{Overview Of Power Electronic}
+\subsection{Introduction to Push-Pull Converter} 
+A \textbf{full-bridge converter} is a high-performance DC-DC topology used in power-demanding applications requiring efficiency and galvanic isolation. It employs four switches in an H-bridge to drive a transformer with alternating voltage, enabling bidirectional current flow. The output is regulated using methods like \textit{phase-shift modulation}, which allows \textit{zero-voltage or zero-current switching} to reduce losses. Key benefits include \textbf{high efficiency} (over 95\%), \textbf{scalability}, and \textbf{high power density}, making it ideal for \textit{renewable energy}, \textit{EV charging}, \textit{industrial drives}, and \textit{telecom systems}. Though complex, it offers a powerful balance of performance and reliability.
+\subsubsection*{Key Features of the Full-Bridge Converter}
+\begin{itemize}
+    \item \textbf{H-Bridge Topology}: \\
+    Utilizes four active switches (MOSFETs/IGBTs) in an H-bridge configuration for bidirectional current flow and efficient power transfer.
+    
+    \item \textbf{Galvanic Isolation}: \\
+    Employs a high-frequency transformer to provide electrical isolation between input and output, enabling safe operation and voltage level adaptation.
+    
+    \item \textbf{High Efficiency}: \\
+    Achieves \textgreater90\% efficiency through soft-switching techniques (Zero-Voltage Switching, ZVS, or Zero-Current Switching, ZCS).
+    
+    \item \textbf{Phase-Shift Control}: \\
+    Regulates output voltage via phase-shift modulation, enabling smooth power transfer and reduced electromagnetic interference (EMI).
+    
+    \item \textbf{High Power Handling}: \\
+    Suitable for kW- to MW-level applications (e.g., solar inverters, EV chargers) due to robust power delivery and scalability.
+    
+    \item \textbf{Voltage Flexibility}: \\
+    Supports wide input/output voltage ranges via transformer turns ratio adjustment.
+
+    \item \textbf{Bidirectional Power Flow}: \\
+    Enables reversible power transfer (e.g., battery charging/discharging systems).
+
+    \item \textbf{Low Output Ripple}: \\
+    Ensures stable DC output with minimal voltage ripple through transformer coupling and rectification.
+
+    \item \textbf{Resilience to Load Variations}: \\
+    Maintains stable performance under dynamic load conditions via precise PWM or phase-shift control.
+
+    \item \textbf{Advanced Variants}: \\
+    Includes LLC resonant converters (for reduced switching losses) and active-clamp designs (for energy recovery from leakage inductance).
+
+
+
+\end{itemize}
+\subsection{Purpose of the Report}
+% \noindent % To make sure the text starts immediately after the multicolumn environment ends
+\noindent The purpose of this report is to provide a comprehensive analysis of Full-Bridge converters, focusing on their working principle, key design considerations, and practical applications. By exploring these aspects, the report aims to highlight the technical nuances that make Full-Bridge converters indispensable in modern electronics while addressing challenges such as leakage inductance, switching losses, and electromagnetic interference (EMI).
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.7\linewidth]{Pictures/Images/1.pdf}
+%     \caption{\textcolor{blue}{\textit{\footnotesize Forward dc-dc converter}}}
+% \end{figure}
